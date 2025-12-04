@@ -273,6 +273,13 @@ void connectUbidots()
 // --------------------------- SETUP ------------------------------------
 void setup()
 {
+  // Pinos
+  pinMode(PIN_LDR, INPUT);
+  pinMode(PIN_LED, OUTPUT);
+  pinMode(PIN_BTN, INPUT_PULLUP);
+
+  digitalWrite(PIN_LED, LOW);
+
   Serial.begin(115200);
 
   // OLED
@@ -286,13 +293,6 @@ void setup()
   display.setRotation(2);
   display.clearDisplay();
   display.display();
-
-  // Pinos
-  pinMode(PIN_LDR, INPUT);
-  pinMode(PIN_LED, OUTPUT);
-  pinMode(PIN_BTN, INPUT_PULLUP);
-
-  digitalWrite(PIN_LED, LOW);
 
   connectWiFi();
 
